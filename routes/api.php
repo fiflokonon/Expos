@@ -6,7 +6,7 @@ use App\Http\Controllers\DocumentController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\SpecialityController;
 use App\Http\Controllers\SuggestionController;
-
+use App\Http\Controllers\RoleController;
 /*
 |--------------------------------------------------------------------------
 |                           API Routes
@@ -21,6 +21,12 @@ use App\Http\Controllers\SuggestionController;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+Route::get('roles', [RoleController::class, 'getRoles']);
+Route::get('role/{id}', [RoleController::class, 'getRole']);
+Route::post('role/add', [RoleController::class, 'createRole']);
+Route::put('role/{id}/edit', [RoleController::class, 'editRole']);
+Route::delete('role/{id}/delete', [RoleController::class, 'deleteRole']);
 
 Route::get('speciality/{id}', [SpecialityController::class, 'getSpeciality']);
 Route::get('specialities', [SpecialityController::class ,'getAllSpecialities']);

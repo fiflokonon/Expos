@@ -29,13 +29,19 @@ class User extends Authenticatable
         'password',
         'profileImg',
         'promotion',
-        'role',
+        'role_id',
     ];
 
     public function speciality()
     {
         return $this->belongsTo(Speciality::class);
     }
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
+    }
+
 
     public function documents()
     {

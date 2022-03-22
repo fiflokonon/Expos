@@ -24,7 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->bigInteger('promotion')->nullable();
             $table->foreignId('speciality_id')->nullable(false)->constrained();
-            $table->string('role')->default('student');
+            $table->foreignId('role_id')->nullable(false)->constrained();
             $table->string('profileImg')->default('');
             $table->rememberToken();
             $table->timestamps();
