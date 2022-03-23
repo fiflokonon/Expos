@@ -18,9 +18,10 @@ use App\Http\Controllers\RoleController;
 |
 */
 
-Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+/*Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
-});
+});*/
+
 
 Route::get('roles', [RoleController::class, 'getRoles']);
 Route::get('role/{id}', [RoleController::class, 'getRole']);

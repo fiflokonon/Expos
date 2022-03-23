@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Speciality;
 
+/**
+ * @group Speciality Management
+ *
+ * APIs to manage the speciality ressource
+ */
 class SpecialityController extends Controller
 {
     //

@@ -6,9 +6,19 @@ use Illuminate\Http\Request;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 
+/**
+ * @group User Management
+ * 
+ * APIs to manage the user ressource
+ */
+
 class UserController extends Controller
 {
     // function login(Request $req)
+
+    /**
+     * 
+     */
 
     function login(Request $req)
     {
@@ -21,6 +31,7 @@ class UserController extends Controller
         }
 
         $token = $user->createToken('user-token')->plainTextToken;
+
         $response = [
             'user' => $user,
             'token' => $token

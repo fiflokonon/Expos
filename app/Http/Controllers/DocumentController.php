@@ -5,6 +5,11 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Document;
 
+/**
+ * @group Document Management
+ *
+ * APIs to manage the document ressource
+ */
 class DocumentController extends Controller
 {
     //
@@ -58,7 +63,7 @@ class DocumentController extends Controller
     function getActiveDocsByField($field)
     {
         return Document::where("field", "like", "%".$field."%")->orWhere('theme', 'like', '%'.$field.'%')
-                        ->where('status', true)->get();                
+                        ->where('status', true)->get();
     }
 /*
     function getActiveDocsByFieldByStudent($field, $id)
